@@ -1,0 +1,46 @@
+<form id='form' method='post'>
+    <p><label for='text'>Text:</label><input type='text' id='text'/></p>
+    <p><input id='submit' type='button' onclick='convert()' value='Convert to ICAO'/></p>
+</form>
+
+<script>
+    let text;
+    let dict = {
+        'A': 'Alfa',
+        'B': 'Bravo',
+        'C': 'Charlie',
+        'D': 'Delta',
+        'E': 'Echo',
+        'F': 'Foxtrot',
+        'G': 'Golf',
+        'H': 'Hotel',
+        'I': 'India',
+        'J': 'Juliet',
+        'K': 'Kilo',
+        'L': 'Lima',
+        'M': 'Mike',
+        'N': 'November',
+        'O': 'Oscar',
+        'P': 'Papa',
+        'Q': 'Quebec',
+        'R': 'Romeo',
+        'S': 'Sierra',
+        'T': 'Tango',
+        'U': 'Uniform',
+        'V': 'Victor',
+        'W': 'Whiskey',
+        'X': 'X-ray',
+        'Y': 'Yankee',
+        'Z': 'Zulu'
+    }
+
+    function getText() {
+        return document.getElementById('text').value;
+    }
+
+    function convert() {
+        text = getText();
+        window.alert(text.toUpperCase().split('').map(char => dict[char] ? dict[char] : char));
+        document.getElementById('form').submit();
+    }
+</script>
